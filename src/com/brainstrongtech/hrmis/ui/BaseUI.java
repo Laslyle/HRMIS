@@ -3,6 +3,8 @@
  */
 package com.brainstrongtech.hrmis.ui;
 
+import java.io.IOException;
+
 /**
  * 
  * UI模块行为接口
@@ -11,6 +13,6 @@ package com.brainstrongtech.hrmis.ui;
  */
 public interface BaseUI {
 
-	void render();
+	void render() throws IOException;
 	 
 }

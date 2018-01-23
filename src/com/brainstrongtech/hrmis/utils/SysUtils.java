@@ -78,7 +78,12 @@ public final class SysUtils {
 	 * @param type
 	 */
 	public static void renderUI(UIType type){
-		UIFactory.getUI(type).render();
+		try {
+			UIFactory.getUI(type).render();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
