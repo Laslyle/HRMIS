@@ -55,12 +55,15 @@ public class MainMenuUI implements BaseUI {
 			     case '4':
 			    	 SysUtils.renderUI(UIType.ShortFormattedLister);
 			    	 break;
-			     case '5':break;
-			     
-			     case '6':break;	
-			     
-			     case '7':break;
-			     
+			     case '5':
+			         SysUtils.renderUI(UIType.EmpSelectorUI);
+			         break;
+			     case '6':
+			         SysUtils.renderUI(UIType.EmpAddUI);
+			         break;	
+			     case '7':
+			         SysUtils.renderUI(UIType.EmpDelete);
+			         break;	
 			     case 'Q':
 			    	 isContinuted=false;
 			    	 break;	

@@ -27,7 +27,12 @@ public class UIFactory {
 			ui = new EmpShortListerUI();
 		else if(type.equals(UIType.ShortFormattedLister))
 			ui=new EmpShortFormattedListerUI();
-		
+		else if(type.equals(UIType.EmpSelectorUI))
+			ui=new EmpSelectorUI();
+		else if(type.equals(UIType.EmpAddUI))
+			ui=new EmpAddUI();
+		else if(type.equals(UIType.EmpDelete))
+			ui=new EmpDelete();
 		else
 			throw new UnsupportedUITypeException("invalid UI type found!");
 		

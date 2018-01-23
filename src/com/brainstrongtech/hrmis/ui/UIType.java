@@ -12,5 +12,8 @@ public enum UIType {
     Lister,
     FormattedLister,
     ShortLister,
-    ShortFormattedLister
+    ShortFormattedLister,
+    EmpSelectorUI,
+    EmpAddUI,
+    EmpDelete
 }
