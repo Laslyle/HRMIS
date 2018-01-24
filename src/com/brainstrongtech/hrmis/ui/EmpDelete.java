@@ -94,4 +94,10 @@ public class EmpDelete implements BaseUI {
 				 SysUtils.renderUI(UIType.MainMenu);
 	}
 
+	@Override
+	public void render(Employee e) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

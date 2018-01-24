@@ -15,5 +15,6 @@ public enum UIType {
     ShortFormattedLister,
     EmpSelectorUI,
     EmpAddUI,
-    EmpDelete
+    EmpDelete,
+    EmpModify
 }

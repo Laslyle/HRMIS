@@ -3,6 +3,7 @@
  */
 package com.brainstrongtech.hrmis.ui;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.brainstrongtech.hrmis.dao.EmployeeDao;
@@ -40,6 +41,11 @@ public class EmpSelectorUI implements BaseUI {
 		{
 			if(entry.equalsIgnoreCase(emp.getLastName())){
 		   emp.listOut();
+		   System.out.println("Modify it? Press y(es) or n(o) ");
+		   entry = SysUtils.getEntry("", true);
+		   if(entry.equals("y"))
+			   SysUtils.renderUI(UIType.EmpModify,emp);
+		   else
 			break;
 			}
 		}
@@ -47,6 +53,12 @@ public class EmpSelectorUI implements BaseUI {
 		SysUtils.pause("\nPress Enter to continue...");
 		break;
 		}
+	}
+
+	@Override
+	public void render(Employee e) throws IOException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

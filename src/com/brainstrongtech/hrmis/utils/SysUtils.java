@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.brainstrongtech.hrmis.domain.Employee;
 import com.brainstrongtech.hrmis.exception.BlankEntryException;
 import com.brainstrongtech.hrmis.exception.HRMISException;
 import com.brainstrongtech.hrmis.ui.UIFactory;
@@ -80,6 +81,15 @@ public final class SysUtils {
 	public static void renderUI(UIType type){
 		try {
 			UIFactory.getUI(type).render();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void renderUI(UIType type,Employee emp){
+		try {
+			UIFactory.getUI(type).render(emp);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

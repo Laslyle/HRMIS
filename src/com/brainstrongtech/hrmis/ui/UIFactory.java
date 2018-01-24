@@ -33,6 +33,8 @@ public class UIFactory {
 			ui=new EmpAddUI();
 		else if(type.equals(UIType.EmpDelete))
 			ui=new EmpDelete();
+		else if(type.equals(UIType.EmpModify))
+			ui=new EmpModify();
 		else
 			throw new UnsupportedUITypeException("invalid UI type found!");
 		

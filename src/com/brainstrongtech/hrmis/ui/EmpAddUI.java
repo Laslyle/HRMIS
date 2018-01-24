@@ -217,4 +217,10 @@ public class EmpAddUI implements BaseUI {
             break;
 		}
 	}
+
+	@Override
+	public void render(Employee e) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
 }

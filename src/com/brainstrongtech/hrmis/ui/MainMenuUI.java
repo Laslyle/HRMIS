@@ -3,6 +3,9 @@
  */
 package com.brainstrongtech.hrmis.ui;
 
+import java.io.IOException;
+
+import com.brainstrongtech.hrmis.domain.Employee;
 import com.brainstrongtech.hrmis.exception.BlankEntryException;
 import com.brainstrongtech.hrmis.utils.SysUtils;
 
@@ -81,6 +84,12 @@ public class MainMenuUI implements BaseUI {
 		
 		System.out.println("\nThank you for using HRMIS V1.0,bye!");
 
+	}
+
+	@Override
+	public void render(Employee e) throws IOException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
