@@ -35,6 +35,7 @@ public class EmpAddUI implements BaseUI {
 		Employee em=new Employee();
 		EmployeeDao empDao = new EmployeeDaoTxtImpl();
 		List<Employee> empList = empDao.loadEmps();
+		while(true){
 		String entry = null;
          System.out.println("倓堊訧捅 每 Employee Record:\r\n====================================\r\nEmployee Record Addition:\r\n");
          System.out.println("Enter the following details of the new employee:\r\nEmployee 3 digit payroll number\r\nPhone Number\r\nLast Name\r\nFirst Name\r\nMiddle Init\r\nDept #\r\nJob Title\r\nDate Hir\r\n\r\n");
@@ -55,7 +56,8 @@ public class EmpAddUI implements BaseUI {
 				}
 			}
 			if (entry.matches("[\\D]{1,}"))
-				System.out.println("Payroll number can contain only numerical characte");
+				SysUtils.pause("Payroll number can contain only numerical characte");
+				//System.out.println("Payroll number can contain only numerical characte");
 			else if (entry.matches("^[\\d]{3}$") && flag == 0) {
 				em.setPayrollNo(entry);
 				break;
@@ -74,7 +76,8 @@ public class EmpAddUI implements BaseUI {
 		em.setTelephoneNum(entry);;
 		break;}
 		else
-			System.out.println("Invalid phone number 每 try again");
+			//System.out.println("Invalid phone number 每 try again");
+          SysUtils.pause("Invalid phone number 每 try again");
 		}
 		
 		while(true){
@@ -89,7 +92,8 @@ public class EmpAddUI implements BaseUI {
 				em.setLastName(entry);
 			break;}
 			else
-				System.out.println("Last name can contain only alphabetical characters and spaces");
+				SysUtils.pause("Last name can contain only alphabetical characters and spaces");
+				//System.out.println("Last name can contain only alphabetical characters and spaces");
 			}
 		
 		while(true){
@@ -104,7 +108,8 @@ public class EmpAddUI implements BaseUI {
 				em.setFirstName(entry);
 			break;}
 			else
-				System.out.println("First name can contain only alphabetical characters and spaces ");
+				SysUtils.pause("First name can contain only alphabetical characters and spaces ");
+			//	System.out.println("First name can contain only alphabetical characters and spaces ");
 			}
 		
 		while(true){
@@ -119,7 +124,8 @@ public class EmpAddUI implements BaseUI {
 				em.setInitial(entry);
 			break;}
 			else
-				System.out.println("Middle Initcan contain only alphabetical characters and spaces");
+				SysUtils.pause("Middle Initcan contain only alphabetical characters and spaces");
+				
 			}
 		
 		while(true){
@@ -134,7 +140,8 @@ public class EmpAddUI implements BaseUI {
 				em.setDeptNo(Integer.parseInt(entry));
 			break;}
 			else
-				System.out.println(" Dept # can contain only digits with no spaces");
+				//System.out.println(" Dept # can contain only digits with no spaces");
+			 SysUtils.pause(" Dept # can contain only digits with no spaces");
 			}
 		
 		while(true){
@@ -149,7 +156,8 @@ public class EmpAddUI implements BaseUI {
 				em.setJobTitle(entry);
 			break;}
 			else
-				System.out.println("Job title can contain only alphabetical characters and spaces");
+				SysUtils.pause("Job title can contain only alphabetical characters and spaces");
+				//System.out.println("Job title can contain only alphabetical characters and spaces");
 			}
 		
 		while(true){
@@ -160,7 +168,7 @@ public class EmpAddUI implements BaseUI {
 				  SysUtils.pause(e.getMessage());
 				  continue;
 				}
-				System.out.println("No date hired entered 每 try again");
+			
 			if(entry.matches("(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29/02/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))")){
 				try {
 					em.setHiringDate(sdf.parse(entry));
@@ -170,7 +178,8 @@ public class EmpAddUI implements BaseUI {
 				}
 			break;}
 			else
-				System.out.println("Invalid Date Hired");
+				SysUtils.pause("Invalid Date Hired");
+				//System.out.println("Invalid Date Hired");
 			}
 		empList.add(em);
 	 final String DATA_FILE = "d:\\records.txt";
@@ -200,8 +209,12 @@ public class EmpAddUI implements BaseUI {
 			e.printStackTrace();
 		}
         System.out.println("Record Saved ");
-		SysUtils.pause("\nPress Enter to continue...");
-         
-         
+        System.out.println("Add another employee record? (y)es or (n)o, ");
+        entry= SysUtils.getEntry("", true);
+        if(entry.equals("y"))
+        	continue;
+        else
+            break;
+		}
 	}
 }
